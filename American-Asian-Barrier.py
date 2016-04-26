@@ -91,7 +91,7 @@ def BOPF(data):
                 except:
                     C_d = C[i+1][l]
 
-                D[m] = 0 if a >= H else ((p * C_u + (1-p) * C_d) / R)
+                D[m] = 0 if a >= H else max(((p * C_u + (1-p) * C_d) / R), a-X, 0)
 
             C[i][:] = D[:]
 
